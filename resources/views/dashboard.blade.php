@@ -7,8 +7,8 @@
 @section('contenido')
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12 md:flex-row flex flex-col items-center">
-            <div class="md:w-8/12 lg:w-6/12 px-5">
-                <img src="{{ $user->imagen ? asset('perfiles') . '/' . $user->imagen : asset('img/user-circle.svg') }}"
+            <div class="md:w-8/12 lg:w-6/12 px-5 ">
+                <img class="rounded-full" src="{{ $user->imagen ? asset('perfiles') . '/' . $user->imagen : asset('img/user-circle.svg') }}"
                     alt="imagen usuario">
             </div>
             <div class="md:w-8/12 lg:w-6/12 px-5 flex flex-col items-center md:justify-center md:items-start py-10 md:py-10">

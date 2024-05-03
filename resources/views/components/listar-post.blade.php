@@ -5,7 +5,7 @@
             @foreach ($posts as $post)
                 <div>
                     <a href="{{ route('posts.show', ['post' => $post, 'user' => $post->user]) }}">
-                        <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
+                        <img class="rounded-lg transition transform hover:scale-110" src="{{ asset('uploads') . '/' . $post->imagen }}" alt="Imagen del post {{ $post->titulo }}">
                     </a>
                 </div>
             @endforeach
