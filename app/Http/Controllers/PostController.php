@@ -63,13 +63,30 @@ class PostController extends Controller
         return redirect()->route('posts.index', auth()->user()->username);
     }
 
-    public function show(User $user, Post $post)
+    /*public function show(User $user, Post $post)
     {
         return view('posts.show',[
             'post' => $post,
             'user' => $user,
         ]);
 
+    }*/
+
+    public function show($username, $postId)
+    {
+        //Obtener el usuario por su nombre de usuario
+        $user = User::where('username', $username)->firstOrFail();
+
+        //Obtener el post por su ID y perteneciente al usuario
+        $post = Post::where('id', $postId)->where('user_id', $user->id)->first();
+
+        //verificar si el post existe y pertenece al usuario
+        if(!$post){
+            return redirect()->route('home');
+        }
+
+        //Retornar la vista con el post y el usuario
+        return view('posts.show', compact('post', 'user'));
     }
 
     public function destroy(Post $post)

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Registrate en iGram
+    Inicia Sesión en iGram
 @endsection
 
 @section('contenido')
